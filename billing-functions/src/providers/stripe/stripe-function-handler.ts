@@ -93,12 +93,12 @@ export function stripeFunctionHandler({
                     metadata: {
                         basejump_account_id: accountId,
                     },
-                    items: [
-                        {
-                            plan: planId || defaultPlanId,
-                            quantity: 1,
-                        },
-                    ],
+                    // items: [
+                    //     {
+                    //         plan: planId || defaultPlanId,
+                    //         quantity: 1,
+                    //     },
+                    // ],
                 },
                 mode: "subscription",
                 success_url: successUrl,

@@ -13,6 +13,7 @@ export type AUTHORIZED_BILLING_USER_INFO = {
     billing_email: string;
     billing_enabled: boolean;
     billing_provider?: string;
+    billing_quantity?: number;
 };
 
 type REQUIRE_AUTHORIZED_BILLING_USER_OPTIONS = {

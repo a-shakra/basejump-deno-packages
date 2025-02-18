@@ -70,43 +70,43 @@ export function stripeFunctionHandler({
 
             const trialEnd = defaultTrialDays ? Math.floor(Date.now() / 1000) + (defaultTrialDays * 24 * 60 * 60) : undefined;
 
-            const session = await stripeClient.checkout.sessions.create({
-                customer: customer.id,
-                // line_items: [
-                //     {
-                //         adjustable_quantity: {
-                //             enabled: true,
-                //             minimum: 1,
-                //             maximum: 5,
-                //         },
-                //         price: planId || defaultPlanId,
-                //         quantity: 1,
-                //     },
-                // ],
-                subscription_data: {
-                    trial_end: trialEnd,
-                    trial_settings: {
-                        end_behavior: {
-                            missing_payment_method: 'create_invoice' // subscription will go past_due if no payment method is added in time
-                        }
-                    },
-                    metadata: {
-                        basejump_account_id: accountId,
-                    },
-                    // items: [
-                    //     {
-                    //         plan: planId || defaultPlanId,
-                    //         quantity: 1,
-                    //     },
-                    // ],
-                },
-                mode: "subscription",
-                success_url: successUrl,
-                cancel_url: cancelUrl,
-                metadata: {
-                    basejump_account_id: accountId,
-                },
-            });
+            // const session = await stripeClient.checkout.sessions.create({
+            //     customer: customer.id,
+            //     // line_items: [
+            //     //     {
+            //     //         adjustable_quantity: {
+            //     //             enabled: true,
+            //     //             minimum: 1,
+            //     //             maximum: 5,
+            //     //         },
+            //     //         price: planId || defaultPlanId,
+            //     //         quantity: 1,
+            //     //     },
+            //     // ],
+            //     subscription_data: {
+            //         trial_end: trialEnd,
+            //         trial_settings: {
+            //             end_behavior: {
+            //                 missing_payment_method: 'create_invoice' // subscription will go past_due if no payment method is added in time
+            //             }
+            //         },
+            //         metadata: {
+            //             basejump_account_id: accountId,
+            //         },
+            //         // items: [
+            //         //     {
+            //         //         plan: planId || defaultPlanId,
+            //         //         quantity: 1,
+            //         //     },
+            //         // ],
+            //     },
+            //     mode: "subscription",
+            //     success_url: successUrl,
+            //     cancel_url: cancelUrl,
+            //     metadata: {
+            //         basejump_account_id: accountId,
+            //     },
+            // });
             
             return {
                 url: session.url,

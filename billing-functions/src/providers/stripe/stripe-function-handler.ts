@@ -80,6 +80,7 @@ export function stripeFunctionHandler({
                             maximum: 5,
                         },
                         price: planId || defaultPlanId,
+                        quantity: 1,
                     },
                 ],
                 subscription_data: {

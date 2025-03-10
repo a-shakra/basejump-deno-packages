@@ -101,6 +101,7 @@ export function stripeFunctionHandler({
                     // ],
                 },
                 allow_promotion_codes: true,
+                payment_method_collection: "if_required",
                 mode: "subscription",
                 success_url: successUrl,
                 cancel_url: cancelUrl,

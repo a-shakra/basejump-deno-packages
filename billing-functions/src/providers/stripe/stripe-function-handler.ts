@@ -100,6 +100,7 @@ export function stripeFunctionHandler({
                     //     },
                     // ],
                 },
+                allow_promotion_codes: true,
                 mode: "subscription",
                 success_url: successUrl,
                 cancel_url: cancelUrl,

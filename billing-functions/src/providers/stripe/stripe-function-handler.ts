@@ -77,7 +77,7 @@ export function stripeFunctionHandler({
                         adjustable_quantity: {
                             enabled: true,
                             minimum: 1,
-                            maximum: 5,
+                            maximum: 100,
                         },
                         price: planId || defaultPlanId,
                         quantity: 1,
